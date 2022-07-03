@@ -1,12 +1,9 @@
 package logicaCliente;
 
 import co.com.sofka.domain.generic.EventChange;
-import logicaBebida.Marca;
-import logicaBebida.Registro;
-import logicaBebida.eventos.BebidaCreada;
-import logicaBebida.eventos.NumeroRegistroCambiado;
 import logicaCliente.eventos.ClienteCreado;
 import logicaCliente.eventos.TipoClienteCambiado;
+import logicaCliente.eventos.TipoDocumentoCambiado;
 
 public class ClienteEventChange extends EventChange {
     public ClienteEventChange(Cliente cliente) {
@@ -20,6 +17,10 @@ public class ClienteEventChange extends EventChange {
         });
         apply((TipoClienteCambiado event) ->{
             cliente.clienteTipo.ModificarTipoCliente(event.gettiponew());
+
+        });
+        apply((TipoDocumentoCambiado event) ->{
+            cliente.documento.ModificarTipoDocumento(event.getTiponew());
 
         });
     }

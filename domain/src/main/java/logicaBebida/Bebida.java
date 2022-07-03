@@ -35,7 +35,7 @@ public class Bebida extends AggregateEvent<BebidaId> {
     }
 
 
-    private Bebida(BebidaId id) {
+    public Bebida(BebidaId id) {
         super(id);
         subscribe(new BebidaEventChange(this));
     }

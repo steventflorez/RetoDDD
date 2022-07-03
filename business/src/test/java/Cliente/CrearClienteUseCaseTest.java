@@ -1,13 +1,9 @@
 package Cliente;
 
-import static org.junit.jupiter.api.Assertions.*;
 
-import bebida.CrearBebidaUseCase;
 import co.com.sofka.business.generic.UseCaseHandler;
 import co.com.sofka.business.support.RequestCommand;
-import logicaBebida.comandos.CrearBebidaCommand;
-import logicaBebida.eventos.BebidaCreada;
-import logicaBebida.values.*;
+
 import logicaCliente.comandos.CrearClienteCommand;
 import logicaCliente.eventos.ClienteCreado;
 import logicaCliente.values.*;

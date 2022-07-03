@@ -9,7 +9,7 @@ public class TipoClienteCambiado extends DomainEvent {
     private final TipoCliente tiponew;
 
     public TipoClienteCambiado(ClienteTipoId clienteTipoId, TipoCliente tiponew) {
-        super("logicaCliente.eventos.TipoClienteCambiado");
+        super("logicaCliente.TipoClienteCambiado");
         this.clienteTipoId = clienteTipoId;
         this.tiponew = tiponew;
     }

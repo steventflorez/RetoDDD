@@ -19,6 +19,10 @@ public class TipoDocumento implements ValueObject<String> {
         this.value = Objects.requireNonNull(value);
     }
 
+    public TipoDocumento CambiarTipoDocumento(String tipoDocumento){
+        return new TipoDocumento(tipoDocumento);
+    }
+
 
     @Override
     public String value() {

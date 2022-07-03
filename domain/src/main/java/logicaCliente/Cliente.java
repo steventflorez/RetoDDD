@@ -4,6 +4,7 @@ import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
 import logicaCliente.eventos.ClienteCreado;
 import logicaCliente.eventos.TipoClienteCambiado;
+import logicaCliente.eventos.TipoDocumentoCambiado;
 import logicaCliente.values.*;
 
 import java.util.List;
@@ -22,7 +23,10 @@ public class Cliente extends AggregateEvent<ClienteId> {
     public void cambiarValorTipoCliente(ClienteTipoId clienteTipoId,TipoCliente tiponew){
         appendChange(new TipoClienteCambiado(clienteTipoId,tiponew)).apply();
     }
-    private Cliente(ClienteId id) {
+    public void cambiarValorTipoDocumento(DocumentoId documentoId,TipoDocumento tiponew){
+        appendChange(new TipoDocumentoCambiado(documentoId,tiponew)).apply();
+    }
+    public Cliente(ClienteId id) {
         super(id);
         subscribe(new ClienteEventChange(this));
     }
